@@ -1,10 +1,15 @@
+*{
+    font-family: 'Belanosima', sans-serif;
+}
+body{
+    margin: 0;    
+}
 h1{
     text-align: center;
-    font-family: 'Belanosima', sans-serif;
 }
 header{
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: #1465A2;
     display: flex;
 }
@@ -26,23 +31,24 @@ footer{
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(400px, auto);
+    grid-auto-rows: minmax(400px, auto);/* Pendiente */
 }
 .film-name{
     width: 100%;
     text-align: center;
 }
-
 .poster-container{
     position: relative;
+    width: 80%;
 }
 .poster-container > img{
     border-radius: 15px;
-    width: 80%;
+    width: 100%;
     height: 350px;
     object-fit: cover;
     box-sizing: border-box;
-    outline: 2px solid #000000;
+    outline: 1px solid #000000;
+    cursor: pointer;
 }
 
 .poster-container > img:hover{
@@ -55,49 +61,16 @@ footer{
     position: absolute;
     color: #FFFFFF;
     top: 40%;
-    left: 40%;
-    width: 20%;
+    left: 30%;
+    width: 40%;
 }
 .poster-container:hover .text-container{
     display: block;
 }
 
-  
 .film-name > p{
-    font-family: 'Belanosima', sans-serif;
     font-size: 130%;
 }
-@media screen and (max-width: 1200px){
-    .films-section{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .show-characters{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-@media screen and (max-width: 1024px){
-    .films-section{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .poster-container > img{
-        height: 400px;
-    }
-    .show-characters{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    /*.character-photo >img{
-        height: auto;
-    }*/
-}
-@media screen and (max-width: 414px){
-    .films-section{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .show-characters{
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
 .poster-class{
     width: 200px;
 }
@@ -106,7 +79,6 @@ footer{
     margin: auto;
     display: grid;
     grid-template-columns: 30% 70%;
-    font-family: 'Belanosima', sans-serif;
     text-align: justify;
 }
 .card-film > img{
@@ -123,7 +95,6 @@ footer{
     border-top: 1px solid#000000;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    font-family: 'Belanosima', sans-serif;
 }
 .character-card {
     display: grid;
@@ -133,7 +104,6 @@ footer{
 }
 .character-card >p{
     padding-left: 5%;
-
 }
 
 .character-photo >img{
@@ -145,15 +115,15 @@ footer{
     width: 90%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
-    font-family: 'Belanosima', sans-serif;
+    grid-template-columns: repeat(4,1fr);
 }
 .location-card{
     width: 100%;
+    text-align: center;
 }
-.location-photo >img{
+.location-photo > img{
     object-fit: cover;
-    width: 90%;
+    width: 100%;
     height: 300px;
     border-radius: 15px;
 }
@@ -162,11 +132,9 @@ footer{
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    font-family: 'Belanosima', sans-serif;
 }
 .vehicle-card{
     width: 100%;
-    font-family: 'Belanosima', sans-serif;
 }
 .vehicle-photo >img{
     object-fit: cover;
@@ -175,6 +143,108 @@ footer{
     border-radius: 15px;
 }
 h2{
-    font-family: 'Belanosima', sans-serif;
     margin-left: 10%;
+}
+.menu-bar{
+    /*height: 100px;*/
+    width: 60%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.menu-bar > ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    width: 90%;
+    color: #FFFFFF;
+    margin: 0;
+}
+ul > li {
+    height: 100%;
+    width: 30%;
+    padding-top: 4%;
+    font-size: 150%;
+    text-align:center;
+    cursor: pointer;
+    border: 1px solid #FFFFFF;
+    
+}
+ul > li:hover {
+    background: #FFFFFF;
+    color:#1465A2
+}
+.filter-bar{
+    width: 50%;
+    height: 30px;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 20px;
+    background: rgba(125, 176, 191, 0.78);
+}
+.filter-bar > select{
+    width: 40%;
+    padding: 5px;
+    margin-left: 5%;
+    background: rgba(125, 176, 191, 0.78);
+    /*border-radius: 15px;*/
+    border: #1465A2;
+}
+@media screen and (max-width: 1024px){
+    .films-section{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .show-characters{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .show-locations{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .show-vehicles{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width: 768px){
+    .films-section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .poster-container > img{
+        height: 400px;
+    }
+    .show-characters{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .show-locations{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .show-vehicles{
+        grid-template-columns: repeat(2,1fr);
+    }
+    /*.character-photo >img{
+        height: auto;
+    }*/
+}
+@media screen and (max-width: 414px){
+    .card-film{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .films-section{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .show-characters{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .show-locations{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .show-vehicles{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+#percentageGender{
+    text-align: center;
+}
+#button-back{
+    padding-top: 10px;
 }

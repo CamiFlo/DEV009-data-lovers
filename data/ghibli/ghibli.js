@@ -1743,6 +1743,7 @@ export default {
           "id": "0cb26464-3416-4490-8f42-cd9d7276884e",
           "name": "Kōichi",
           "img": "https://vignette.wikia.nocookie.net/ponyo/images/0/01/Koichi.png/revision/latest?cb=20171121220050",
+          "gender": "Male",
           "age": "30",
           "eye_color": "Dark brown",
           "hair_color": "Black",

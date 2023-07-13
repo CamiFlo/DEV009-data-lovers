@@ -1,13 +1,12 @@
 h1{
     text-align: center;
     font-family: 'Belanosima', sans-serif;
-    /*font-size: 160%;*/
 }
 header{
     width: 100%;
-    height: 120px;
+    height: 100px;
     background-color: #1465A2;
-    text-align: center;
+    display: flex;
 }
 header img{
     height: 120%;
@@ -34,6 +33,9 @@ footer{
     text-align: center;
 }
 
+.poster-container{
+    position: relative;
+}
 .poster-container > img{
     border-radius: 15px;
     width: 80%;
@@ -43,13 +45,33 @@ footer{
     outline: 2px solid #000000;
 }
 
+.poster-container > img:hover{
+    filter: brightness(0.4);
+    transform: scale(1.1);
+}
+
+.poster-container > .text-container{
+    display: none;
+    position: absolute;
+    color: #FFFFFF;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+}
+.poster-container:hover .text-container{
+    display: block;
+}
+
+  
 .film-name > p{
     font-family: 'Belanosima', sans-serif;
     font-size: 130%;
 }
-
 @media screen and (max-width: 1200px){
     .films-section{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .show-characters{
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -60,10 +82,99 @@ footer{
     .poster-container > img{
         height: 400px;
     }
+    .show-characters{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /*.character-photo >img{
+        height: auto;
+    }*/
 }
-
-@media screen and (max-width: 540px){
+@media screen and (max-width: 414px){
     .films-section{
         grid-template-columns: repeat(1, 1fr);
     }
+    .show-characters{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.poster-class{
+    width: 200px;
+}
+.card-film{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    font-family: 'Belanosima', sans-serif;
+    text-align: justify;
+}
+.card-film > img{
+    width: 80%;
+    margin: auto;
+}
+.card-film > h2{
+    padding-left: 20%;
+}
+.show-characters{
+    width: 90%;
+    margin: auto;
+    padding-top: 2%;
+    border-top: 1px solid#000000;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    font-family: 'Belanosima', sans-serif;
+}
+.character-card {
+    display: grid;
+    border-bottom: 1px solid #000000;
+    grid-template-columns: 35% 60%;
+
+}
+.character-card >p{
+    padding-left: 5%;
+
+}
+
+.character-photo >img{
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+}
+.show-locations{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    font-family: 'Belanosima', sans-serif;
+}
+.location-card{
+    width: 100%;
+}
+.location-photo >img{
+    object-fit: cover;
+    width: 90%;
+    height: 300px;
+    border-radius: 15px;
+}
+.show-vehicles{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    font-family: 'Belanosima', sans-serif;
+}
+.vehicle-card{
+    width: 100%;
+    font-family: 'Belanosima', sans-serif;
+}
+.vehicle-photo >img{
+    object-fit: cover;
+    width: 100%;
+    /*height: 300px;*/
+    border-radius: 15px;
+}
+h2{
+    font-family: 'Belanosima', sans-serif;
+    margin-left: 10%;
 }

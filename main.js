@@ -11,17 +11,15 @@ function displayFilms(data){
   section.innerHTML= '';
   for(let i=0; i < data.length ; i++){
   //declaramos la seccion, poster y nombre
-    const containerFilm = document.createElement('div');
+    const containerFilm = document.createElement('section');
     containerFilm.className = 'film-name';
-    const posterContainer = document.createElement('div');
+    const posterContainer = document.createElement('figure');
     posterContainer.className = 'poster-container';
     const poster = document.createElement('img');
     poster.src = data[i].poster; 
-    //PRUEBA
     const information = document.createElement('div');
     information.innerText = data[i].release_date + '\n\nVer más';
     information.className = 'text-container';
-    //Prueba
     poster.alt = allFilms[i].title;
     poster.className = 'poster-class';
     const titulo = document.createElement('p');
@@ -43,7 +41,7 @@ function displayFilms(data){
 function displayCharacters(data, section){
   section.innerHTML = '';
   for (let i=0; i<data.length; i++){
-    const characterCard=document.createElement('div');
+    const characterCard=document.createElement('section');
     characterCard.className='character-card';
     const characterPhoto=document.createElement('div');
     characterPhoto.className='character-photo';
@@ -61,7 +59,7 @@ function displayCharacters(data, section){
 function displayItems(data, section){
   for (let i=0; i<data.length; i++){
     section.innerHTML = '';
-    const locationCard=document.createElement('div');
+    const locationCard=document.createElement('section');
     locationCard.className='location-card';
     const locationPhoto=document.createElement('figure');
     locationPhoto.className='location-photo';
@@ -84,14 +82,11 @@ imgHeader1.src = 'https://indy-systems.imgix.net/tsa14o3kh1lt3ts7b8vwz6m3atbk?ma
 const menu = document.createElement('nav');
 const menuOption = document.createElement('ul');
 menu.className = 'menu-bar';
-const menuOptionHome = document.createElement('li');
-menuOptionHome.innerText = 'HOME';
 const menuOptionFilms = document.createElement('li');
 menuOptionFilms.innerText = 'FILMS';
 const menuOptionCharacters = document.createElement('li');
 menuOptionCharacters.innerText = 'CHARACTERS';
 
-//menuOption.appendChild(menuOptionHome);
 menuOption.appendChild(menuOptionFilms);
 menuOption.appendChild(menuOptionCharacters);
 menu.appendChild(menuOption);
@@ -114,7 +109,7 @@ menuOptionCharacters.addEventListener('click', function() {
 const view1 = document.createElement('section');
 const view2 = document.createElement('section');
 const view3 = document.createElement('section');
-//const view3=document.createElement('div');
+
 root.appendChild(view1);
 root.appendChild(view2);
 root.appendChild(view3);
@@ -132,7 +127,7 @@ view1.appendChild(titlePage);
 const filterSection = document.createElement('nav');
 filterSection.className = 'filter-bar';
 view1.appendChild(filterSection);
-
+let filmsToShow;
 const optionDirector = document.createElement('select');
 const optionsDirectors = document.createElement('option');
 optionsDirectors.innerText = 'Show by Director';
@@ -147,7 +142,7 @@ for (let i = 0; i < allFilms.length; i++) {
 }
 for (let i = 0; i < filmDirectors.length; i++) {
   const optionsDirectors = document.createElement('option');
-  //optionsDirectors.id = i;
+
   optionsDirectors.innerText = filmDirectors[i];
   optionDirector.appendChild(optionsDirectors);
 }
@@ -169,30 +164,32 @@ filterSection.appendChild(optionSort);
 optionDirector.addEventListener('change', evento => {
   const option = evento.target.options.selectedIndex;
   if (option === 0) {
-    displayFilms(allFilms);
+    filmsToShow = allFilms;
+    displayFilms(filmsToShow);
   }
   else {
-    const filtro = searchByDirector(allFilms, filmDirectors[option - 1]);
-    displayFilms(filtro);
+    filmsToShow = searchByDirector(allFilms, filmDirectors[option - 1]);
+    displayFilms(filmsToShow);
   }
 });
 optionSort.addEventListener('change', evento => {
   const option = evento.target.options.selectedIndex;
   switch(option) {
   case 0:
-    displayFilms(allFilms); 
+    displayFilms(filmsToShow); 
     break;
   case 1:
-    displayFilms(sortByYearAsc(allFilms)); 
+    filmsToShow = sortByYearAsc(filmsToShow);
+    displayFilms(filmsToShow); 
     break;
   case 2:
-    displayFilms(sortByYearDesc(allFilms)); 
+    filmsToShow = sortByYearDesc(filmsToShow);
+    displayFilms(filmsToShow); 
     break;
   }
 });
 //Se muestran todas las películas dentro de un contenedor
-//Vamos a imprimir todas las películas y poster
-const section = document.createElement('div');
+const section = document.createElement('section');
 section.className= 'films-section';
 view1.appendChild(section);
 displayFilms(allFilms); // Llamamos a la función displayFilms y envia como parametro toda la data a mostrar
@@ -203,7 +200,7 @@ function showAllFilm(film){
   view2.innerHTML= '';
   const button1=document.createElement('button');
   button1.id = 'button-back';
-  button1.innerText='Back to films';
+  button1.innerText='< Back to films';
   const cardFilm = document.createElement('section');
   cardFilm.className= 'card-film';
   const poster = document.createElement('img');
@@ -213,8 +210,6 @@ function showAllFilm(film){
   titleFilm.innerText = film.title;
   const year = document.createElement('h2');
   year.innerText = film.release_date;
-  //const infoFilm =document.createElement('p');
-  //infoFilm.innerText ='Director: '+allFilms[0].director+'\nProducer: '+allFilms[0].producer+'\nScore: '+allFilms[0].rt_score+'\n\n'+allFilms[0].description;
   const infoDirector =document.createElement('p');
   infoDirector.innerHTML =`<b>Director: </b>${film.director}`;
   const infoProducer=document.createElement('p');
@@ -238,7 +233,8 @@ function showAllFilm(film){
   //Seccion que muestra los personajes de la película
   const subTitle1=document.createElement('h2');
   subTitle1.innerText='Characters';
-  const showCharacters=document.createElement('div');
+  subTitle1.className = 'subtitle-content';
+  const showCharacters=document.createElement('section');
   showCharacters.className='show-characters';
   displayCharacters(film.people,showCharacters);
 
@@ -247,8 +243,9 @@ function showAllFilm(film){
   //Sección que muestra las locaciones de la película solo si hay datos
   if(film.locations.length>0){
     const subTitle2=document.createElement('h2');
+    subTitle2.className = 'subtitle-content';
     subTitle2.innerText='Locations';
-    const showLocations=document.createElement('div');
+    const showLocations=document.createElement('section');
     showLocations.className='show-locations'; 
     displayItems(film.locations,showLocations);
     view2.appendChild(subTitle2);
@@ -258,7 +255,8 @@ function showAllFilm(film){
   if(film.vehicles.length>0){
     const subTitle3=document.createElement('h2');
     subTitle3.innerText='Vehicles';
-    const showVehicles=document.createElement('div');
+    subTitle3.className = 'subtitle-content';
+    const showVehicles=document.createElement('section');
     showVehicles.className='show-vehicles';
     displayItems(film.vehicles,showVehicles);
     view2.appendChild(subTitle3);
@@ -277,11 +275,12 @@ function showAllFilm(film){
 //INICIA VISTA 3
 const titleCharacters=document.createElement('h1');
 titleCharacters.innerText='Characters';
-const showCharacters=document.createElement('div');
+const showCharacters=document.createElement('section');
 showCharacters.className='show-characters';
 const percentageByGender = document.createElement('p');
 percentageByGender.id = 'percentageGender';
 const allCharacters = mergeCharacters(allFilms);
+let charactersToShow;
 //Sección de filtros
 const filterSectionCharacter = document.createElement('nav');
 filterSectionCharacter.className = 'filter-bar';
@@ -321,23 +320,26 @@ optionGender.addEventListener('change', evento => {
   const option = evento.target.options.selectedIndex;
   if (option === 0) {
     percentageByGender.innerText = '';
-    displayCharacters(allCharacters, showCharacters);
+    charactersToShow = allCharacters;
+    displayCharacters(charactersToShow, showCharacters);
   }
   else {
     percentageByGender.innerText = 'The percentage of '+ genders[option - 1] + ' characters is '+ percentageGender(allCharacters, genders[option - 1]) + '%';
-    const filter = searchByGender(allCharacters, genders[option - 1]);
-    displayCharacters(filter, showCharacters);
+    charactersToShow = searchByGender(allCharacters, genders[option - 1]);
+    displayCharacters(charactersToShow, showCharacters);
   }
 });
 optionSortCharacters.addEventListener('change', evento => {
   const option = evento.target.options.selectedIndex;
   switch(option) {
   case 0:
-    displayCharacters(allCharacters, showCharacters); break;
+    displayCharacters(charactersToShow, showCharacters); break;
   case 1:
-    displayCharacters(sortByNameAsc(allCharacters), showCharacters);  break;
+    charactersToShow = sortByNameAsc(charactersToShow);
+    displayCharacters(charactersToShow, showCharacters);  break;
   case 2:
-    displayCharacters(sortByNameDesc(allCharacters), showCharacters);  break;
+    charactersToShow = sortByNameDesc(charactersToShow);
+    displayCharacters(charactersToShow, showCharacters);  break;
   }
 });
 view3.appendChild(titleCharacters);

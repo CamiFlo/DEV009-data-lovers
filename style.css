@@ -6,6 +6,7 @@ body{
 }
 h1{
     text-align: center;
+    font-size: 150%;
 }
 header{
     width: 100%;
@@ -23,7 +24,7 @@ footer{
     text-align: center;
     color: #FFFFFF;
 }
-.responsive-class{
+#root{
     width: 100%;
 }
 .films-section{
@@ -36,10 +37,12 @@ footer{
 .film-name{
     width: 100%;
     text-align: center;
+    padding-bottom: 10%;
 }
 .poster-container{
     position: relative;
     width: 80%;
+    margin: auto;
 }
 .poster-container > img{
     border-radius: 15px;
@@ -84,6 +87,7 @@ footer{
 .card-film > img{
     width: 80%;
     margin: auto;
+    border-radius: 15px;
 }
 .card-film > h2{
     padding-left: 20%;
@@ -91,14 +95,15 @@ footer{
 .show-characters{
     width: 90%;
     margin: auto;
-    padding-top: 2%;
-    border-top: 1px solid#000000;
+    /*padding-top: 2%;*/
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
 .character-card {
+    height: 200px;
     display: grid;
-    border-bottom: 1px solid #000000;
+    border: 1px solid #000000;
+    margin: 5px;
     grid-template-columns: 35% 60%;
 
 }
@@ -106,6 +111,9 @@ footer{
     padding-left: 5%;
 }
 
+.character-card:hover{
+    background: rgba(20, 101, 162,0.5);
+}
 .character-photo >img{
     object-fit: cover;
     width: 100%;
@@ -139,14 +147,18 @@ footer{
 .vehicle-photo >img{
     object-fit: cover;
     width: 100%;
-    /*height: 300px;*/
     border-radius: 15px;
 }
-h2{
-    margin-left: 10%;
+.subtitle-content{
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
 }
 .menu-bar{
-    /*height: 100px;*/
     width: 60%;
     display: block;
     justify-content: center;
@@ -162,7 +174,7 @@ h2{
 }
 ul > li {
     height: 100%;
-    width: 30%;
+    width: 40%;
     padding-top: 4%;
     font-size: 150%;
     text-align:center;
@@ -180,15 +192,16 @@ ul > li:hover {
     border-radius: 15px;
     margin: auto;
     margin-bottom: 20px;
-    background: rgba(125, 176, 191, 0.78);
+    background: rgba(20, 101, 162,0.5);
+
 }
 .filter-bar > select{
     width: 40%;
     padding: 5px;
     margin-left: 5%;
-    background: rgba(125, 176, 191, 0.78);
-    /*border-radius: 15px;*/
+    background: rgba(20, 101, 162,0.8);
     border: #1465A2;
+    color: #FFFFFF;
 }
 @media screen and (max-width: 1024px){
     .films-section{
@@ -220,11 +233,8 @@ ul > li:hover {
     .show-vehicles{
         grid-template-columns: repeat(2,1fr);
     }
-    /*.character-photo >img{
-        height: auto;
-    }*/
 }
-@media screen and (max-width: 414px){
+@media screen and (max-width: 415px){
     .card-film{
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
@@ -241,10 +251,46 @@ ul > li:hover {
     .show-vehicles{
         grid-template-columns: repeat(1,1fr);
     }
+    header{
+        width: 100%;
+        height: 240px;
+        background-color: #1465A2;
+        flex-direction: column;
+    }
+    header img{
+        height: 80%;
+    }
+    .menu-bar{
+        width: 100%;
+        align-items: center;
+    }
+    .menu-bar > ul {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+        margin: 0;
+    }
+    ul > li {
+        width: 100%;
+        border: 1px solid #FFFFFF;     
+    }
+    .filter-bar{
+        width: 90%;
+    }
 }
 #percentageGender{
     text-align: center;
 }
 #button-back{
-    padding-top: 10px;
+    width: 120px;
+    height: 30px;
+    margin: 2%;
+    background-color: #1465A2;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 15px; 
+}
+#button-back:hover{
+    cursor:pointer;
 }

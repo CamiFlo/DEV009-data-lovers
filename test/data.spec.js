@@ -23,29 +23,7 @@ const films = [
     ]
   }
 ];
-const isaoFilms = [
-  {"title": "Only Yesterday","director": "Isao Takahata","release_date": "1991",
-    "people": [
-      {"name": "Aiko","gender": "Female","specie": "Human"}
-    ]
-  },
-  {"title": "Pom Poko","director": "Isao Takahata","release_date": "1994",
-    "people": [
-      {"name": "Shoukichi","gender": "Male", "specie": "Raccoon Dog"},
-      {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
-      {"name": "Zeniba","gender": "Female","specie": "Witch"}
-    ]
-  }
-];
-const hayaoFilms = [ 
-  {"title": "Ponyo on the Cliff by the Sea","director": "Hayao Miyazaki","release_date": "2008",
-    "people": [
-      {"name": "Sosuke","gender": "Male","specie": "Human"},
-      {"name": "Brunhilde/Ponyo","gender": "Female", "specie": "Fish/Human"},
-      {"name": "Granmammare","gender": "Female","specie": "Deity"},
-    ]
-  }
-];
+
 const allCharacters = [
   {"name": "Aiko", "gender": "Female", "specie": "Human"},
   {"name": "Sosuke", "gender": "Male","specie": "Human"},
@@ -55,93 +33,25 @@ const allCharacters = [
   {"name": "Okiyo","gender": "Female", "specie": "Raccoon Dog"},
   {"name": "Zeniba","gender": "Female","specie": "Witch"}
 ];
-const maleCharacters = [
-  {"name": "Sosuke","gender": "Male","specie": "Human"},
-  {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"}
-];
-const orderedByYearAsc = [
-  {"title": "Only Yesterday","director": "Isao Takahata","release_date": "1991",
-    "people": [
-      {"name": "Aiko","gender": "Female","specie": "Human"}
-    ]
-  },
-  {"title": "Pom Poko","director": "Isao Takahata","release_date": "1994",
-    "people": [
-      {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"},
-      { "name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
-      {"name": "Zeniba","gender": "Female","specie": "Witch"}
-    ]
-  },
-  {"title": "Ponyo on the Cliff by the Sea","director": "Hayao Miyazaki","release_date": "2008",
-    "people": [
-      {"name": "Sosuke", "gender": "Male","specie": "Human"},
-      {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
-      {"name": "Granmammare","gender": "Female","specie": "Deity"}
-    ]
-  }
-];
 
-const orderedByYearDesc = [
-  {"title": "Ponyo on the Cliff by the Sea","director": "Hayao Miyazaki","release_date": "2008",
-    "people": [
-      {"name": "Sosuke","gender": "Male","specie": "Human"},
-      {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
-      { "name": "Granmammare","gender": "Female","specie": "Deity"}
-    ]
-  },
-  {"title": "Pom Poko","director": "Isao Takahata","release_date": "1994",
-    "people": [
-      {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"},
-      {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
-      { "name": "Zeniba","gender": "Female", "specie": "Witch"}
-    ]
-  },
-  {"title": "Only Yesterday","director": "Isao Takahata","release_date": "1991",
-    "people": [
-      {"name": "Aiko","gender": "Female","specie": "Human"}
-    ]
-  },
-];
-
-const orderNamesAToZ = [
-  {"name": "Aiko","gender": "Female","specie": "Human"},
-  {"name": "Brunhilde/Ponyo", "gender": "Female","specie": "Fish/Human"},
-  {"name": "Granmammare","gender": "Female","specie": "Deity"},
-  {"name": "Okiyo", "gender": "Female","specie": "Raccoon Dog"},
-  {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog" },
-  {"name": "Sosuke","gender": "Male","specie": "Human"},
-  {"name": "Zeniba","gender": "Female","specie": "Witch"}
-];
-const femaleCharacters = [
-  {"name": "Aiko","gender": "Female","specie": "Human"},
-  {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
-  {"name": "Granmammare","gender": "Female","specie": "Deity"},
-  {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
-  {"name": "Zeniba","gender": "Female","specie": "Witch"}
-];
-const orderNamesZToA = [
-  {"name": "Zeniba","gender": "Female","specie": "Witch"},
-  {"name": "Sosuke","gender": "Male","specie": "Human"},
-  {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"},
-  {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
-  { "name": "Granmammare","gender": "Female","specie": "Deity"},
-  {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
-  {"name": "Aiko", "gender": "Female","specie": "Human"}
-];
-const pruebaNames = [
-  {"name": "Zeniba", "gender": "Female","specie": "Witch"},
-  {"name": "Okiyo","gender": "Female", "specie": "Raccoon Dog"},
-  {"name": "Aiko","gender": "Female","specie": "Human"}
-];
 describe('searchByGender', () => {
   it('es una funcion', () => {
     expect(typeof searchByGender).toBe('function');
   });
-  it('Devuelve personajes Female', () => {
-    expect(searchByGender(allCharacters,'Female')).toEqual(femaleCharacters);
+  it('debería devolver arreglo con personajes femeninos', () => {
+    expect(searchByGender(allCharacters,'Female')).toEqual([
+      {"name": "Aiko","gender": "Female","specie": "Human"},
+      {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
+      {"name": "Granmammare","gender": "Female","specie": "Deity"},
+      {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
+      {"name": "Zeniba","gender": "Female","specie": "Witch"}
+    ]);
   });
-  it('Devuelve personajes Male', () => {
-    expect(searchByGender(allCharacters,'Male')).toEqual(maleCharacters);
+  it('debería devolver arreglo con personajes masculinos', () => {
+    expect(searchByGender(allCharacters,'Male')).toEqual([
+      {"name": "Sosuke","gender": "Male","specie": "Human"},
+      {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"}
+    ]);
   });
 });
 
@@ -149,7 +59,7 @@ describe('mergeCharacters', () => {
   it('es una funcion', () => {
     expect(typeof mergeCharacters).toBe('function');
   });
-  it('Une los personajes de las peliculas', () => {
+  it('debería devolver un arreglo con todos los personajes de las peliculas', () => {
     expect(mergeCharacters(films)).toEqual(allCharacters);
   });
 });
@@ -158,55 +68,139 @@ describe('searchByDirector', () => {
   it('es una funcion', ()=> {
     expect(typeof searchByDirector).toBe('function');
   });
-  it('Devuelve arreglo con el filme del director Hayao Miyazaki', () => {
-    expect(searchByDirector(films,'Hayao Miyazaki')).toEqual(hayaoFilms);
+  it('debería devolver un arreglo con el filme del director Hayao Miyazaki', () => {
+    expect(searchByDirector(films,'Hayao Miyazaki')).toEqual([ 
+      {"title": "Ponyo on the Cliff by the Sea","director": "Hayao Miyazaki","release_date": "2008",
+        "people": [
+          {"name": "Sosuke","gender": "Male","specie": "Human"},
+          {"name": "Brunhilde/Ponyo","gender": "Female", "specie": "Fish/Human"},
+          {"name": "Granmammare","gender": "Female","specie": "Deity"},
+        ]
+      }
+    ]);
   });
-  //Isao Takahata
-  it('Devuelve arreglo con el filme del director Isao Takahata', () => {
-    expect(searchByDirector(films,'Isao Takahata')).toEqual(isaoFilms);
+  it('debería devolver un arreglo con los filmes del director Isao Takahata', () => {
+    expect(searchByDirector(films,'Isao Takahata')).toEqual([
+      {"title": "Only Yesterday","director": "Isao Takahata","release_date": "1991",
+        "people": [
+          {"name": "Aiko","gender": "Female","specie": "Human"}
+        ]
+      },
+      {"title": "Pom Poko","director": "Isao Takahata","release_date": "1994",
+        "people": [
+          {"name": "Shoukichi","gender": "Male", "specie": "Raccoon Dog"},
+          {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
+          {"name": "Zeniba","gender": "Female","specie": "Witch"}
+        ]
+      }
+    ]);
   });
 });
+
 describe('sortByYearAsc', () => {
   it('es una funcion', ()=> {
     expect(typeof sortByYearAsc).toBe('function');
   });
-  it('Devuelve arreglo con las películas ordenadas por año de lanzamiento de forma ascendente', () => {
-    expect(sortByYearAsc(films)).toEqual(orderedByYearAsc);
+
+  it('debería devolver un arreglo con las películas ordenadas por año de lanzamiento de forma ascendente', () => {
+    expect(sortByYearAsc(films)).toEqual([
+      {"title": "Only Yesterday","director": "Isao Takahata","release_date": "1991",
+        "people": [
+          {"name": "Aiko","gender": "Female","specie": "Human"}
+        ]
+      },
+      {"title": "Pom Poko","director": "Isao Takahata","release_date": "1994",
+        "people": [
+          {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"},
+          { "name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
+          {"name": "Zeniba","gender": "Female","specie": "Witch"}
+        ]
+      },
+      {"title": "Ponyo on the Cliff by the Sea","director": "Hayao Miyazaki","release_date": "2008",
+        "people": [
+          {"name": "Sosuke", "gender": "Male","specie": "Human"},
+          {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
+          {"name": "Granmammare","gender": "Female","specie": "Deity"}
+        ]
+      }
+    ]);
   });
-});
-describe('sortByYearDesc', () => {
-  it('es una funcion', ()=> {
-    expect(typeof sortByYearDesc).toBe('function');
-  });
-  it('Devuelve arreglo con las películas ordenadas por año de lanzamiento de forma descendente', () => {
-    expect( sortByYearDesc(films)).toEqual(orderedByYearDesc);
-  });
-  it('Devuelve arreglo con las películas ordenadas por el año de lanzamiento de forma descendente', () => {
-    expect( sortByYearDesc(orderedByYearAsc)).toEqual(orderedByYearDesc);
-  });
-  
-  it('debería devolver una lista ordenada en orden descendente por fecha de lanzamiento', () => {
+  it('debería devolver un arreglo ordenado en orden ascendente por fecha de lanzamiento', () => {
     const films = [
       { title: 'Ponyo on the Cliff by the Sea', release_date: '2022' },
       { title: 'Pom Poko', release_date: '2021' },
       { title: 'Only Yesterday', release_date: '2023' },
     ];
-    const sortedFilms = sortByYearDesc(films);
-    expect(sortedFilms).toEqual([
+    expect(sortByYearAsc(films)).toEqual([
+      { title: 'Pom Poko', release_date: '2021' },
+      { title: 'Ponyo on the Cliff by the Sea', release_date: '2022' },
+      { title: 'Only Yesterday', release_date: '2023' },
+    ]);
+  });
+  it('debería devolver el orden original si todas las fechas de lanzamiento son iguales', () => {
+    const testFilms = [
+      { title: 'Only Yesterday', release_date: '1991' },
+      { title: 'Only Yesterday', release_date: '1991' },
+      { title: 'Only Yesterday', release_date: '1991' }
+    ];
+    expect(sortByYearDesc(testFilms)).toEqual([
+      { title: 'Only Yesterday', release_date: '1991' },
+      { title: 'Only Yesterday', release_date: '1991' },
+      { title: 'Only Yesterday', release_date: '1991' }
+    ]);
+  });
+});
+
+describe('sortByYearDesc', () => {
+  it('es una funcion', ()=> {
+    expect(typeof sortByYearDesc).toBe('function');
+  });
+  it('Devuelve arreglo con las películas ordenadas por año de lanzamiento de forma descendente', () => {
+    expect(sortByYearDesc(films)).toEqual([
+      {"title": "Ponyo on the Cliff by the Sea","director": "Hayao Miyazaki","release_date": "2008",
+        "people": [
+          {"name": "Sosuke","gender": "Male","specie": "Human"},
+          {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
+          { "name": "Granmammare","gender": "Female","specie": "Deity"}
+        ]
+      },
+      {"title": "Pom Poko","director": "Isao Takahata","release_date": "1994",
+        "people": [
+          {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"},
+          {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
+          { "name": "Zeniba","gender": "Female", "specie": "Witch"}
+        ]
+      },
+      {"title": "Only Yesterday","director": "Isao Takahata","release_date": "1991",
+        "people": [
+          {"name": "Aiko","gender": "Female","specie": "Human"}
+        ]
+      },
+    ]);
+  });
+  it('debería devolver un arreglo ordenado en orden descendente por fecha de lanzamiento', () => {
+    const testFilms = [
+      { title: 'Ponyo on the Cliff by the Sea', release_date: '2022' },
+      { title: 'Pom Poko', release_date: '2021' },
+      { title: 'Only Yesterday', release_date: '2023' },
+    ];
+    expect(sortByYearDesc(testFilms)).toEqual([
       { title: 'Only Yesterday', release_date: '2023' },
       { title: 'Ponyo on the Cliff by the Sea', release_date: '2022' },
       { title: 'Pom Poko', release_date: '2021' },
     ]);
   });
-  it('debería devolver una lista vacía si no se proporcionan películas', () => {
-    const films = [];
-    const sortedFilms = sortByYearDesc(films);
-    expect(sortedFilms).toEqual([]);
-  });
-  it('debería devolver la lista original si solo hay una película en el arreglo', () => {
-    const films = [{ title: 'Ponyo on the Cliff by the Sea', release_date: '2022' }];
-    const sortedFilms = sortByYearDesc(films);
-    expect(sortedFilms).toEqual([{ title: 'Ponyo on the Cliff by the Sea', release_date: '2022' }]);
+  it('debería devolver el orden original si todas las fechas de lanzamiento son iguales', () => {
+    const testFilms = [
+      { title: 'Pom Poko', release_date: '2021' },
+      { title: 'Pom Poko', release_date: '2021' },
+      { title: 'Pom Poko', release_date: '2021' }
+    ];
+    expect(sortByYearDesc(testFilms)).toEqual([
+      { title: 'Pom Poko', release_date: '2021' },
+      { title: 'Pom Poko', release_date: '2021' },
+      { title: 'Pom Poko', release_date: '2021' }
+    ]);
   });
 });
 describe('sortByNameAsc', () => {
@@ -214,22 +208,50 @@ describe('sortByNameAsc', () => {
     expect(typeof sortByNameAsc).toBe('function');
   });
   it('ordena los personajes por nombre de A hacia Z', ()=>{
-    expect(sortByNameAsc(allCharacters)).toEqual(orderNamesAToZ);
+    expect(sortByNameAsc(allCharacters)).toEqual([
+      {"name": "Aiko","gender": "Female","specie": "Human"},
+      {"name": "Brunhilde/Ponyo", "gender": "Female","specie": "Fish/Human"},
+      {"name": "Granmammare","gender": "Female","specie": "Deity"},
+      {"name": "Okiyo", "gender": "Female","specie": "Raccoon Dog"},
+      {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog" },
+      {"name": "Sosuke","gender": "Male","specie": "Human"},
+      {"name": "Zeniba","gender": "Female","specie": "Witch"}
+    ]);
   });
+
   it('ordena los personajes por nombre de A hacia Z', ()=>{
-    expect(sortByNameAsc(pruebaNames)).toEqual([
+    const testNames = [
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
+      {"name": "Okiyo","gender": "Female", "specie": "Raccoon Dog"},
+      {"name": "Aiko","gender": "Female","specie": "Human"}
+    ];
+    expect(sortByNameAsc(testNames)).toEqual([
       {"name": "Aiko","gender": "Female","specie": "Human"},
       {"name": "Okiyo","gender": "Female", "specie": "Raccoon Dog"},
       { "name": "Zeniba","gender": "Female","specie": "Witch"}
     ]);
   });
+  it('debería mantener el orden original si todos los nombres son iguales', () => {
+    const testNames = [
+      {"name": "Sosuke","gender": "Male","specie": "Human"},
+      {"name": "Sosuke","gender": "Male","specie": "Human"},
+      {"name": "Sosuke","gender": "Male","specie": "Human"}
+    ];
+
+    expect(sortByNameAsc(testNames)).toEqual([
+      {"name": "Sosuke","gender": "Male","specie": "Human"},
+      {"name": "Sosuke","gender": "Male","specie": "Human"},
+      {"name": "Sosuke","gender": "Male","specie": "Human"}
+    ]);
+  });
 });
+
 describe('sortByNameDesc', () => {
   it('es una funcion', ()=> {
     expect(typeof sortByNameDesc).toBe('function');
   });
   it('ordena los personajes por nombre de Z hacia A', ()=>{
-    expect(sortByNameDesc(orderNamesAToZ)).toEqual([
+    expect(sortByNameDesc(allCharacters)).toEqual([
       {"name": "Zeniba","gender": "Female","specie": "Witch"},
       {"name": "Sosuke","gender": "Male","specie": "Human"},
       {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"},
@@ -240,30 +262,39 @@ describe('sortByNameDesc', () => {
     ]);
   });
   it('ordena los personajes por nombre de Z hacia A', ()=>{
-    expect(sortByNameDesc(orderNamesAToZ)).toEqual(orderNamesZToA);
-  });
-
-  it('ordena los personajes por nombre de Z hacia A', ()=>{
-    expect(sortByNameDesc(mergeCharacters(films))).toEqual([
-      {"name": "Zeniba","gender": "Female","specie": "Witch"},
-      {"name": "Sosuke","gender": "Male","specie": "Human"},
-      {"name": "Shoukichi","gender": "Male","specie": "Raccoon Dog"},
-      {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
-      {"name": "Granmammare","gender": "Female","specie": "Deity"},
-      {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
+    const testNames = [
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
+      {"name": "Aiko","gender": "Female","specie": "Human"},
+      {"name": "Okiyo","gender": "Female", "specie": "Raccoon Dog"}
+    ];
+    expect(sortByNameDesc(testNames)).toEqual([
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
+      {"name": "Okiyo","gender": "Female", "specie": "Raccoon Dog"},
       {"name": "Aiko","gender": "Female","specie": "Human"}
     ]);
   });
+  it('debería devolver el orden original si todos los nombres son iguales', ()=>{
+    const testNames = [
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"}
+    ];
+    expect(sortByNameDesc(testNames)).toEqual([
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
+      {"name": "Zeniba", "gender": "Female","specie": "Witch"}
+    ]);
+  });
 });
+
 describe('percentageGender', () => {
   it('es una funcion', ()=> {
     expect(typeof percentageGender).toBe('function');
   });
-  it('Muestra porcentaje de personajes masculinos respecto del total de personajes', ()=> {
+  it('Devuelve 28.57% de personajes masculinos respecto del total de personajes', ()=> {
     expect(percentageGender(allCharacters,'Male')).toBe('28.57');
   });
-  it('Muestra porcentaje de personajes femeninos respecto del total de personajes', ()=> {
+  it('Devuelve 71.43% de de personajes femeninos respecto del total de personajes', ()=> {
     expect(percentageGender(allCharacters,'Female')).toBe('71.43');
   });
 });
-

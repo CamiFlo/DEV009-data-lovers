@@ -42,6 +42,7 @@ export const searchByGender = (allCharacters,gender) => {
   const filterList = allCharacters.filter(character => character.gender === gender);
   return filterList;
 };
+//FUNCION QUE ORDENA LOS PERSONAJES POR NOMBRE ASCENDENTEMENTE
 export const sortByNameAsc = (allCharacters) => {
   const sortedList = allCharacters.sort(function(a, b){ 
     if (a.name > b.name) {
@@ -53,6 +54,7 @@ export const sortByNameAsc = (allCharacters) => {
   });
   return sortedList;
 };
+//FUNCION QUE ORDENA LOS PERSONAJES POR NOMBRE DESCENDENTEMENTE
 export const sortByNameDesc = (allCharacters) => {
   const sortList = allCharacters.sort(function(a, b){ 
     if (a.name < b.name) {
@@ -61,10 +63,10 @@ export const sortByNameDesc = (allCharacters) => {
     if (a.name > b.name) {
       return -1;
     }
-    //return 0;
   });
   return sortList;
 };
+//FUNCION QUE DEVUELVE EL PORCENTAJE POR GENERO
 export const percentageGender = (allCharacters, busqueda) => {
   const filtro = allCharacters.filter(character => character.gender === busqueda );
   return ((filtro.length*100) / allCharacters.length).toFixed(2);

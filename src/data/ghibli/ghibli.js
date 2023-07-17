@@ -114,7 +114,7 @@ export default {
         {
           "id": "05d8d01b-0c2f-450e-9c55-aa0daa34838e",
           "name": "Motro",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/1/17/Eggman_laputa.jpg",
+          "img": "https://feelinganimatedblog.files.wordpress.com/2019/11/motro-being-introduced.jpg?w=525",
           "gender": "Male",
           "age": "Unspecified/Adult",
           "eye_color": "Dark brown",
@@ -124,7 +124,7 @@ export default {
         {
           "id": "b22a684f-1819-40c8-94a6-d40c3b5e18eb",
           "name": "Okami",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/6/65/Okami.jpg",
+          "img": "https://feelinganimatedblog.files.wordpress.com/2019/11/okami-close-up.jpg?w=525",
           "gender": "Female",
           "age": "50",
           "eye_color": "Dark brown",
@@ -179,7 +179,7 @@ export default {
         {
           "id": "0132f7f6-fd52-4ac3-b5df-c96b609f77b6",
           "name": "Tedis",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/1/13/Tedis.jpg",
+          "img": "https://i.pinimg.com/originals/2c/3e/be/2c3ebee958c237eaf7fb37f38a30da09.jpg",
           "climate": "Continental",
           "terrain": "Hill",
           "surface_water": "30",
@@ -306,7 +306,7 @@ export default {
         {
           "id": "f467e18e-3694-409f-bdb3-be891ade1106",
           "name": "Catbus",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/3/30/Catbus.jpg",
+          "img": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b69dbfb1-10d3-457a-848f-bc961f885c10/d9ori81-9ac4c393-e681-4d55-9efa-f8b875d15a68.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I2OWRiZmIxLTEwZDMtNDU3YS04NDhmLWJjOTYxZjg4NWMxMFwvZDlvcmk4MS05YWM0YzM5My1lNjgxLTRkNTUtOWVmYS1mOGI4NzVkMTVhNjgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2UxYxRW2CWS7VXTVk5TUUwGlNj8gdEuDKvgumyn9BBs",
           "gender": "Male",
           "age": "NA",
           "eye_color": "Yellow",
@@ -1121,7 +1121,7 @@ export default {
         {
           "id": "615aa48d-8673-4117-b35a-79cb67af1897",
           "name": "Forest",
-          "img": "https://www.teahub.io/photos/full/230-2307062_princess-mononoke-forest-spirit.jpg",
+          "img": "https://e1.pxfuel.com/desktop-wallpaper/641/42/desktop-wallpaper-princess-mononoke-forest-princess.jpg",
           "climate": "Tropical",
           "terrain": "Forest",
           "surface_water": "60",
@@ -1438,7 +1438,7 @@ export default {
         {
           "id": "a8bd9c03-7c80-4a97-b7c0-6a668acaf576",
           "name": "The Cat Kingdom",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/a9/Baron022.jpg",
+          "img": "https://i.pinimg.com/originals/90/55/c9/9055c922d40c634fcb85ba4eaafec62f.jpg",
           "climate": "Continental",
           "terrain": "Plain",
           "surface_water": "30",
@@ -1592,7 +1592,7 @@ export default {
         {
           "id": "2354305f-dccd-4c44-a79e-cc60ba7376e6",
           "name": "Howl's castle",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/e6/Howls_Castle.jpg",
+          "img": "https://www.austinchronicle.com/binary/8b35/19AFS_Howls_Moving_Castle_Still-1024x559.jpg",
           "description": "Wizard Howl's home. It's scale changes from scene to scene.",
           "vehicle_class": "Moving castle",
           "length": "unknown",
@@ -1835,7 +1835,7 @@ export default {
         {
           "id": "469b14bd-5565-4436-bbed-c2036f42cc99",
           "name": "Himawari Nursery School",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/6/6b/Himawari_Nursery_School.jpg",
+          "img": "https://static.wikia.nocookie.net/ponyo/images/7/77/Dagis.png",
           "climate": "Mild",
           "terrain": "Ocean",
           "surface_water": "50",
@@ -1848,7 +1848,7 @@ export default {
         {
           "id": "923d70c9-8f15-4972-ad53-0128b261d628",
           "name": "Sosuke's Boat",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/PonyoS%C5%8DsukeBoat.jpg",
+          "img": "https://i.pinimg.com/originals/f2/fc/3f/f2fc3f6e261e04054b7cd64c5019b494.png",
           "description": "A toy boat where Sosuke plays",
           "vehicle_class": "Boat",
           "length": "10",
@@ -2422,7 +2422,7 @@ export default {
         {
           "id": "56e423c4-d9a1-44c4-8bdb-1cab45fbf63e",
           "name": "The Marsh House",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8c/Marsh_house.jpg",
+          "img": "https://www.skwigly.co.uk/wp-content/uploads/2016/05/when-marnie-was-there-oscar-3.jpg",
           "climate": "Mild",
           "terrain": "Marsh",
           "surface_water": "60",

@@ -13,7 +13,9 @@
 
 Desarrollo de un sitio web que reúne el trabajo del estudio Ghibli a través de los años, donde el usuario puede visualizar y navegar de forma simple entre todas los filmes realizados, el usuario puede acceder a una ficha informativa de cada filme. Además puede filtrar por Director o ordenar cronológicamente por año de lanzamiento. Adicionalmente, se pueden visualizar todos los personajes, los cuales pueden ser mostrados por género o bien, ser organizados alfabéticamente por nombre.
 
-La solución fue desarrollada considerando que la data puede ser modificada, por ejemplo, si este año hay un nuevo estreno del director Hayao Miyazaki la data se actualiza, entonces se van a poder visualizar esos cambios sin necesidad de directamente modificar el código .
+Este sitio web tiene la función de mostrar lo que estudio Ghibli ofrece dentro de la animación japonesa, por lo que brinda información a cualquier usuario que tenga la curiosidad de conocer, ya sea un fanático, alguien que está buscando que ver o que quiere saber más del tema.
+
+La solución fue desarrollada considerando que la data puede ser modificada, por ejemplo, si este año hay un nuevo estreno del director Hayao Miyazaki la data se actualiza, entonces se van a poder visualizar esos cambios sin necesidad de directamente modificar el código.
 
 ## 2. Historias de usuario
 
@@ -39,14 +41,14 @@ Se tomaron en cuenta las necesidades que podían ser cubiertas con lo que la dat
 
 - Que la página sea responsiva
 	
-### II. Yo usuaria quiero ver toda la información de la película que elija.
+### II. Yo usuaria quiero ver la información de la película que elija para saber en qué año se estrenó, quién la dirigió, quién la produjo y de qué trata la película.
 
 **Criterios mínimos**
 - Ver toda la información (año de lanzamiento, nombre del director, sinopsis, personajes, locaciones y vehículos) de la película seleccionada
 
 **Definición de terminado**
 
-- Crear la función en JS que muestre la información de la película:  póster, información en orden (Nombre, año, director, productor, score, sinopsis)
+- Crear la función en JS que muestre la información de la película en orden:  póster, nombre, año, director, productor, score, sinopsis.
 
 - Crear función para mostrar personajes, locaciones y vehículos.
 
@@ -56,7 +58,7 @@ Se tomaron en cuenta las necesidades que podían ser cubiertas con lo que la dat
 
 - Que la página sea responsiva
 	
-### III. Yo usuaria quiero ver una sección de todos los personajes para visualizarlos con una foto. 
+### III. Yo usuaria quiero ver una sección de todos los personajes para visualizarlos con una foto y saber su nombre, edad y género. 
 
 **Criterios mínimos**
 
@@ -64,23 +66,17 @@ Se tomaron en cuenta las necesidades que podían ser cubiertas con lo que la dat
 
 **Definición de terminado**
 
-- Crear la función en JS que muestre la información de información de los personajes(imagen, nombre, edad y género)
+- Crear la función en JS que muestre la información de los personajes(imagen, nombre, edad y género)
 
 - Que la página sea responsiva
 
-### IV. Yo como seguidora de un director en específico quiero ver las películas por director, así como poder ordenarlas por año de lanzamiento. De la misma manera quiero filtrar los personajes por género y especie, también ordenarlos por nombre.
+### IV. Yo usuaria quiero ver las películas por director, así como poder ordenarlas por año de lanzamiento para visualizar el trabajo del director cronologicamente. 
 
 **Criterios mínimos**
 
 - Poder filtrar por nombre de Director
 
 - Poder ordenar las películas por año de lanzamiento
-
-- Poder filtrar los personajes por género
-
-- Poder ordenar los personajes por nombre
-
-- Poder filtrar los personajes por especie
 
 **Definición de terminado**
 
@@ -90,13 +86,24 @@ Se tomaron en cuenta las necesidades que podían ser cubiertas con lo que la dat
 
 - Crear función de JS que ordene de manera ascendente a las películas por año de lanzamiento
 
+- Que la página sea responsiva.
+
+### V. Yo usuaria quiero ver los personajes por género y ordenarlos por nombre para explorar y encontrar rápidamente los personajes que deseo conocer.
+**Criterios mínimos**
+
+- Poder filtrar los personajes por género
+
+- Poder ordenar los personajes por nombre
+
+**Definición de terminado**
+
 - Función de JS que filtre por género
 
 - Función de JS que ordene por edad de los personajes de forma ascendente y descendente.
 
 - Que la página sea responsiva.
 
-### V. Yo usuaria quiero saber el porcentaje personajes por género que aparecen en todas las películas
+### VI. Yo usuaria quiero saber el porcentaje de personajes por género que aparecen en todas las películas para conocer cuál tiene más presencia.
 
 **Criterios mínimos**
 

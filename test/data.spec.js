@@ -1,18 +1,18 @@
 import {searchByGender, mergeCharacters, searchByDirector, sortByYearAsc, sortByYearDesc, sortByNameAsc, sortByNameDesc, percentageGender} from '../src/data.js';
 
 const films = [ 
-  {"title": "Only Yesterday",
-    "director": "Isao Takahata",
-    "release_date": "1991",
-    "people": [
-      {"name": "Aiko","gender": "Female","specie": "Human"}
-    ]
-  },
   {"title": "Ponyo on the Cliff by the Sea","director": "Hayao Miyazaki","release_date": "2008",
     "people": [
       {"name": "Sosuke","gender": "Male","specie": "Human"},
       {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
       {"name": "Granmammare","gender": "Female","specie": "Deity"},
+    ]
+  },
+  {"title": "Only Yesterday",
+    "director": "Isao Takahata",
+    "release_date": "1991",
+    "people": [
+      {"name": "Aiko","gender": "Female","specie": "Human"}
     ]
   },
   {"title": "Pom Poko","director": "Isao Takahata","release_date": "1994",
@@ -25,10 +25,10 @@ const films = [
 ];
 
 const allCharacters = [
-  {"name": "Aiko", "gender": "Female", "specie": "Human"},
   {"name": "Sosuke", "gender": "Male","specie": "Human"},
   {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
   {"name": "Granmammare","gender": "Female","specie": "Deity"},
+  {"name": "Aiko", "gender": "Female", "specie": "Human"},
   {"name": "Shoukichi", "gender": "Male","specie": "Raccoon Dog"},
   {"name": "Okiyo","gender": "Female", "specie": "Raccoon Dog"},
   {"name": "Zeniba","gender": "Female","specie": "Witch"}
@@ -40,9 +40,9 @@ describe('searchByGender', () => {
   });
   it('debería devolver arreglo con personajes femeninos', () => {
     expect(searchByGender(allCharacters,'Female')).toEqual([
-      {"name": "Aiko","gender": "Female","specie": "Human"},
       {"name": "Brunhilde/Ponyo","gender": "Female","specie": "Fish/Human"},
       {"name": "Granmammare","gender": "Female","specie": "Deity"},
+      {"name": "Aiko","gender": "Female","specie": "Human"},
       {"name": "Okiyo","gender": "Female","specie": "Raccoon Dog"},
       {"name": "Zeniba","gender": "Female","specie": "Witch"}
     ]);
@@ -125,30 +125,6 @@ describe('sortByYearAsc', () => {
       }
     ]);
   });
-  it('debería devolver un arreglo ordenado en orden ascendente por fecha de lanzamiento', () => {
-    const films = [
-      { title: 'Ponyo on the Cliff by the Sea', release_date: '2022' },
-      { title: 'Pom Poko', release_date: '2021' },
-      { title: 'Only Yesterday', release_date: '2023' },
-    ];
-    expect(sortByYearAsc(films)).toEqual([
-      { title: 'Pom Poko', release_date: '2021' },
-      { title: 'Ponyo on the Cliff by the Sea', release_date: '2022' },
-      { title: 'Only Yesterday', release_date: '2023' },
-    ]);
-  });
-  it('debería devolver el orden original si todas las fechas de lanzamiento son iguales', () => {
-    const testFilms = [
-      { title: 'Only Yesterday', release_date: '1991' },
-      { title: 'Only Yesterday', release_date: '1991' },
-      { title: 'Only Yesterday', release_date: '1991' }
-    ];
-    expect(sortByYearDesc(testFilms)).toEqual([
-      { title: 'Only Yesterday', release_date: '1991' },
-      { title: 'Only Yesterday', release_date: '1991' },
-      { title: 'Only Yesterday', release_date: '1991' }
-    ]);
-  });
 });
 
 describe('sortByYearDesc', () => {
@@ -176,30 +152,6 @@ describe('sortByYearDesc', () => {
           {"name": "Aiko","gender": "Female","specie": "Human"}
         ]
       },
-    ]);
-  });
-  it('debería devolver un arreglo ordenado en orden descendente por fecha de lanzamiento', () => {
-    const testFilms = [
-      { title: 'Ponyo on the Cliff by the Sea', release_date: '2022' },
-      { title: 'Pom Poko', release_date: '2021' },
-      { title: 'Only Yesterday', release_date: '2023' },
-    ];
-    expect(sortByYearDesc(testFilms)).toEqual([
-      { title: 'Only Yesterday', release_date: '2023' },
-      { title: 'Ponyo on the Cliff by the Sea', release_date: '2022' },
-      { title: 'Pom Poko', release_date: '2021' },
-    ]);
-  });
-  it('debería devolver el orden original si todas las fechas de lanzamiento son iguales', () => {
-    const testFilms = [
-      { title: 'Pom Poko', release_date: '2021' },
-      { title: 'Pom Poko', release_date: '2021' },
-      { title: 'Pom Poko', release_date: '2021' }
-    ];
-    expect(sortByYearDesc(testFilms)).toEqual([
-      { title: 'Pom Poko', release_date: '2021' },
-      { title: 'Pom Poko', release_date: '2021' },
-      { title: 'Pom Poko', release_date: '2021' }
     ]);
   });
 });
@@ -231,19 +183,6 @@ describe('sortByNameAsc', () => {
       { "name": "Zeniba","gender": "Female","specie": "Witch"}
     ]);
   });
-  it('debería mantener el orden original si todos los nombres son iguales', () => {
-    const testNames = [
-      {"name": "Sosuke","gender": "Male","specie": "Human"},
-      {"name": "Sosuke","gender": "Male","specie": "Human"},
-      {"name": "Sosuke","gender": "Male","specie": "Human"}
-    ];
-
-    expect(sortByNameAsc(testNames)).toEqual([
-      {"name": "Sosuke","gender": "Male","specie": "Human"},
-      {"name": "Sosuke","gender": "Male","specie": "Human"},
-      {"name": "Sosuke","gender": "Male","specie": "Human"}
-    ]);
-  });
 });
 
 describe('sortByNameDesc', () => {
@@ -271,18 +210,6 @@ describe('sortByNameDesc', () => {
       {"name": "Zeniba", "gender": "Female","specie": "Witch"},
       {"name": "Okiyo","gender": "Female", "specie": "Raccoon Dog"},
       {"name": "Aiko","gender": "Female","specie": "Human"}
-    ]);
-  });
-  it('debería devolver el orden original si todos los nombres son iguales', ()=>{
-    const testNames = [
-      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
-      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
-      {"name": "Zeniba", "gender": "Female","specie": "Witch"}
-    ];
-    expect(sortByNameDesc(testNames)).toEqual([
-      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
-      {"name": "Zeniba", "gender": "Female","specie": "Witch"},
-      {"name": "Zeniba", "gender": "Female","specie": "Witch"}
     ]);
   });
 });

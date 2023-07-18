@@ -1,4 +1,4 @@
-import { searchByGender, mergeCharacters, searchByDirector, sortByYearAsc, sortByYearDesc, sortByNameAsc, sortByNameDesc, percentageGender } from './data.js';
+import {/*sortByName,*/ searchByGender, mergeCharacters, searchByDirector, sortByYearAsc, sortByYearDesc, sortByNameAsc, sortByNameDesc, percentageGender } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 

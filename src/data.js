@@ -6,9 +6,6 @@ export const searchByDirector = (allFilms,director) => {
 //FUNCION QUE ORDENA LAS PELICULAS POR AÑO DE LANZAMIENTO ASCENDENTEMENTE
 export const sortByYearAsc = (allFilms) => {
   return allFilms.sort(function(a, b){ 
-    if (a.release_date > b.release_date) {
-      return 1; 
-    }
     if (a.release_date < b.release_date) {
       return -1;
     }
@@ -17,9 +14,6 @@ export const sortByYearAsc = (allFilms) => {
 //FUNCION QUE ORDENA LAS PELICULAS POR AÑO DE LANZAMIENTO DESCENDENTEMENTE
 export const sortByYearDesc = (allFilms) => {
   const sortedList = allFilms.sort(function(a, b){ 
-    if (a.release_date < b.release_date) {
-      return 1; 
-    }
     if (a.release_date > b.release_date) {
       return -1;
     }
@@ -43,11 +37,24 @@ export const searchByGender = (allCharacters,gender) => {
   return filterList;
 };
 //FUNCION QUE ORDENA LOS PERSONAJES POR NOMBRE ASCENDENTEMENTE
+/*export const sortByName = (allCharacters, sortType) => {
+  if (sortType === 0){
+    return allCharacters.sort(function(a, b){ 
+      if (a.name < b.name){
+        return -1;
+      }
+    });
+  }
+  if (sortType === 1){
+    return allCharacters.sort(function(a, b){ 
+      if (a.name > b.name){
+        return -1;
+      }
+    });
+  }
+};*/
 export const sortByNameAsc = (allCharacters) => {
   const sortedList = allCharacters.sort(function(a, b){ 
-    if (a.name > b.name) {
-      return 1; 
-    }
     if (a.name < b.name) {
       return -1;
     }
@@ -57,9 +64,6 @@ export const sortByNameAsc = (allCharacters) => {
 //FUNCION QUE ORDENA LOS PERSONAJES POR NOMBRE DESCENDENTEMENTE
 export const sortByNameDesc = (allCharacters) => {
   const sortList = allCharacters.sort(function(a, b){ 
-    if (a.name < b.name) {
-      return 1; 
-    }
     if (a.name > b.name) {
       return -1;
     }
